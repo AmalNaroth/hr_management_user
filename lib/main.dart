@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hr_management_user/config/routes/app_routes.dart';
@@ -6,13 +7,15 @@ import 'package:hr_management_user/core/dependency_injection/dependency_injectio
 import 'package:hr_management_user/core/navigator_services/navigator_services.dart';
 import 'package:hr_management_user/features/user_side/application/login/login_bloc.dart';
 import 'package:hr_management_user/features/user_side/application/splash/splash_bloc.dart';
+import 'package:hr_management_user/firebase_options.dart';
 
-void main() async {
+main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await configureInjection();
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
+
   runApp(
     const MyApp(),
   );
@@ -43,6 +46,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: false,
+          appBarTheme:
+              const AppBarTheme().copyWith(backgroundColor: Colors.purple),
         ),
         routes: AppRoutes.appRoute,
         initialRoute: AppRoutes.splashScreen,

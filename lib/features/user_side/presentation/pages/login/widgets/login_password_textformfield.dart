@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hr_management_user/config/size/size.dart';
+import 'package:hr_management_user/core/utils/screen_controllers/screen_controllers.dart';
 import 'package:hr_management_user/features/user_side/presentation/widgets/text_widget.dart';
 
 class LoginPasswordTextFormField extends StatefulWidget {
@@ -23,6 +24,7 @@ class _LoginPasswordTextFormFieldState
             textValue: "Password", fontSize: 17, fontWeight: FontWeight.bold),
         fHight10,
         TextFormField(
+          controller: LoginControlls.passwordControllers,
           validator: (value) {
              if(value==null || value.isEmpty){
               return "Enter the password";

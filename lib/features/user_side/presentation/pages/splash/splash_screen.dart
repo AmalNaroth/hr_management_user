@@ -27,6 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
           LottieBuilder.asset(
             "assets/animation/Animation - 1704790885409.json",
             fit: BoxFit.cover,
+            delegates: LottieDelegates(
+                values: [ValueDelegate.color([], value: Colors.black)]),
           ),
         ],
       ),
