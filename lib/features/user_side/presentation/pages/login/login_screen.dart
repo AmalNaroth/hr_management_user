@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hr_management_user/config/routes/app_routes.dart';
 import 'package:hr_management_user/config/size/size.dart';
 import 'package:hr_management_user/core/navigator_services/navigator_services.dart';
@@ -20,25 +21,27 @@ class LoginScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
           children: [
             SizedBox(
-              height: mWidth! * .85,
+              height: 300.w,
               child: Center(
                 child: Icon(
                   Icons.token,
-                  size: mWidth! * .2,
+                  size: 100.w,
                 ),
               ),
             ),
             TextWidget(
               textValue: "Welcome to Naro Tech.",
-              fontSize: 28,
+              fontSize: 24.sp,
               fontWeight: FontWeight.bold,
             ),
-            fHight10,
+            SizedBox(
+              height: 5.h,
+            ),
             TextWidget(
               textValue:
                   "Empowering Tomorrow, Today. Naro Tech - Innovate, Transform, Thrive.",
               fontColors: Colors.grey,
-              fontSize: 16,
+              fontSize: 13.sp,
             ),
             Form(
               key: LoginControlls.formkey,
@@ -80,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                   } else {
                     return TextWidget(
                         textValue: "Login",
-                        fontSize: 17,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                         fontColors: Colors.white);
                   }

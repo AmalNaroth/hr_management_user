@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hr_management_user/config/size/size.dart';
 import 'package:hr_management_user/core/utils/screen_controllers/screen_controllers.dart';
 import 'package:hr_management_user/features/user_side/presentation/widgets/text_widget.dart';
@@ -21,8 +22,10 @@ class _LoginPasswordTextFormFieldState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
-            textValue: "Password", fontSize: 17, fontWeight: FontWeight.bold),
-        fHight10,
+            textValue: "Password", fontSize: 15.sp, fontWeight: FontWeight.bold),
+        SizedBox(
+          height: 10.h,
+        ),
         TextFormField(
           controller: LoginControlls.passwordControllers,
           validator: (value) {
@@ -35,7 +38,7 @@ class _LoginPasswordTextFormFieldState
           decoration: InputDecoration(
             hintText: "Enter your passwrod",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.w),
             ),
             suffixIcon: IconButton(
               onPressed: () {
@@ -51,7 +54,9 @@ class _LoginPasswordTextFormFieldState
             ),
           ),
         ),
-        fHight30,
+        SizedBox(
+          height: 30.h,
+        ),
       ],
     );
   }

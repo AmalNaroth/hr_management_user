@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hr_management_user/config/size/size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hr_management_user/core/utils/screen_controllers/screen_controllers.dart';
 import 'package:hr_management_user/features/user_side/presentation/widgets/text_widget.dart';
 
@@ -11,16 +11,20 @@ class LoginEmailTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        fHight30,
+        SizedBox(
+          height: 25.h,
+        ),
         TextWidget(
             textValue: "Email Address",
-            fontSize: 17,
+            fontSize: 15.sp,
             fontWeight: FontWeight.bold),
-        fHight10,
+        SizedBox(
+          height: 10.h,
+        ),
         TextFormField(
           controller: LoginControlls.emailControllers,
           validator: (value) {
-            if(value==null || value.isEmpty){
+            if (value == null || value.isEmpty) {
               return "Enter the email address";
             }
             return null;
@@ -28,11 +32,13 @@ class LoginEmailTextFormField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: "Enter your email",
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.w),
             ),
           ),
         ),
-        fHight20,
+        SizedBox(
+          height: 15.h,
+        ),
       ],
     );
   }
