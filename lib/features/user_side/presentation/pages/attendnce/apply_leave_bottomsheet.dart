@@ -44,57 +44,6 @@ class EmployeeAddLeaveBottomSheet extends StatelessWidget {
             CustomCalenderFormField(
               fieldTitle: "To",
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextWidget(
-                textValue: "Number of days",
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            fHight10,
-            Container(
-              padding: EdgeInsets.all(10),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextWidget(textValue: ""),
-                ],
-              ),
-            ),
-            fHight20,
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextWidget(
-                textValue: "Remaining Leaves",
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            fHight10,
-            Container(
-              padding: const EdgeInsets.all(10),
-              height: 60,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextWidget(textValue: ""),
-                ],
-              ),
-            ),
             fHight20,
             Align(
               alignment: Alignment.centerLeft,

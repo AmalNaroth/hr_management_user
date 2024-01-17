@@ -22,8 +22,8 @@ class UserProfile extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.red,
                         image: DecorationImage(
-                            colorFilter:
-                                ColorFilter.mode(Colors.grey, BlendMode.color),
+                            colorFilter: const ColorFilter.mode(
+                                Colors.grey, BlendMode.color),
                             image: NetworkImage(args.imageFile),
                             fit: BoxFit.cover)),
                     height: 250.w,
@@ -54,18 +54,18 @@ class UserProfile extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                     ),
                     Container(
-                      padding: EdgeInsets.all(25),
-                      margin: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(25),
+                      margin: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 5,
-                            spreadRadius: 10,
-                            color: Colors.black.withOpacity(0.2)
-                          )
-                        ]
-                      ),
+                          color: Colors.white,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20)),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 5,
+                                spreadRadius: 10,
+                                color: Colors.black.withOpacity(0.2))
+                          ]),
                       child: Row(
                         children: [
                           Expanded(
@@ -75,78 +75,95 @@ class UserProfile extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                  TextWidget(
-                                    textValue: "First name",
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    fontColors: Colors.purple),
+                                    TextWidget(
+                                        textValue: "First name",
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                        fontColors: Colors.purple),
                                     fHight5,
-                                TextWidget(textValue: args.firstName,
-                                fontSize: 17,fontWeight: FontWeight.w500),
-                                ],),
+                                    TextWidget(
+                                        textValue: args.firstName,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500),
+                                  ],
+                                ),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Last name",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.lastName,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.lastName,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "User Name",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.userName,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.userName,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Email",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.userEmail,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.userEmail,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Employee Id",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.employeeId,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.employeeId,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Department",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.department,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.department,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Designation",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.designation,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.designation,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                                 fHight20,
                                 TextWidget(
                                     textValue: "Join date",
                                     fontSize: 18,
                                     fontWeight: FontWeight.bold,
                                     fontColors: Colors.purple),
-                                    fHight5,
-                                TextWidget(textValue: args.joinDate,
-                                fontSize: 17,fontWeight: FontWeight.w500),
+                                fHight5,
+                                TextWidget(
+                                    textValue: args.joinDate,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w500),
                               ],
                             ),
                           ),

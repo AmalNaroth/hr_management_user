@@ -59,24 +59,26 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
 Widget dashBoardPage({required UserEntity data}) {
   return SafeArea(
-    child: ListView(
-      padding: const EdgeInsets.all(20),
+    child: Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () {
-                _skey.currentState?.openDrawer();
-              },
-              icon:
-                  const Icon(Icons.diversity_2, color: Colors.white, size: 30),
-            ),
-            CircleAvatar(
-              radius: 30.w,
-              backgroundImage: NetworkImage(data.imageFile),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {
+                  _skey.currentState?.openDrawer();
+                },
+                icon: const Icon(Icons.diversity_2,
+                    color: Colors.white, size: 30),
+              ),
+              CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(data.imageFile),
+              ),
+            ],
+          ),
         ),
         TextWidget(
           textValue: data.userName,
@@ -84,128 +86,51 @@ Widget dashBoardPage({required UserEntity data}) {
           fontSize: 30,
           fontWeight: FontWeight.bold,
         ),
-        fHight5,
+        const SizedBox(height: 5),
         TextWidget(
-          textValue: "Let's be productive toady!",
+          textValue: "Let's be productive today!",
           fontColors: Colors.white,
           fontSize: 20,
           fontWeight: FontWeight.w500,
         ),
-        fHight10,
+        const SizedBox(height: 10),
         const TimeWidget(),
-        fHight50,
+        const SizedBox(height: 50),
         Container(
-          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.symmetric(horizontal: 25),
+          padding: const EdgeInsets.all(25),
           decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            borderRadius: const BorderRadius.all(
-              Radius.circular(20),
-            ),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 5,
+                spreadRadius: 4,
+                color: Colors.black.withOpacity(0.3),
+              )
+            ],
+            gradient: const LinearGradient(colors: [
+              Color(0xff292459),
+              Color(0xff8269B1),
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextWidget(
-                    textValue: "Overview",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextWidget(
-                          textValue: "May 2024",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  )
-                ],
-              ),
+              TextWidget(
+                  textValue: "Savari",
+                  fontSize: 27,
+                  fontColors: Colors.white,
+                  fontWeight: FontWeight.w500),
               fHight20,
-              Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          TextWidget(
-                              textValue: "Presence",
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500),
-                          TextWidget(
-                              textValue: "20",
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500)
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      child: Column(
-                        children: [
-                          TextWidget(
-                              textValue: "Absens",
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500),
-                          TextWidget(
-                              textValue: "20",
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500)
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+              TextWidget(
+                textValue:
+                    "Introducing the ultimate travel companion app, seamlessly combining personalized"
+                    " itinerary planning, real-time navigation, and curated recommendations to"
+                    " ensure a perfect journey tailored just for you.",
+                fontSize: 17,
+                fontColors: Colors.white60,
+                fontWeight: FontWeight.w400,
               ),
-              fHight20,
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      TextWidget(
-                          textValue: "Tuesday 18 April 2023",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                      fHight20,
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              children: [
-                                TextWidget(
-                                    textValue: "Check In",
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20),
-                                fHight10,
-                                TextWidget(
-                                  textValue: "12:55",
-                                  fontSize: 20,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              children: [
-                                TextWidget(
-                                    fontWeight: FontWeight.bold,
-                                    textValue: "Check Out",
-                                    fontSize: 20),
-                                fHight10,
-                                TextWidget(textValue: "12:55", fontSize: 20),
-                              ],
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              )
             ],
           ),
         ),
@@ -241,23 +166,23 @@ Widget dashBoardDrawer(
         Card(
           child: ListTile(
             title: const Text("Profile"),
-            onTap: () =>
-                NavigatorService.popAndPushNamed(AppRoutes.userProfile,arguments: data),
+            onTap: () => NavigatorService.popAndPushNamed(AppRoutes.userProfile,
+                arguments: data),
           ),
         ),
-        Card(
-          child: ListTile(
-            title: const Text("Attendence"),
-            onTap: () => NavigatorService.popAndPushNamed(AppRoutes.attendence),
-          ),
-        ),
-        Card(
-          child: ListTile(
-            title: const Text("Leave"),
-            onTap: () =>
-                NavigatorService.popAndPushNamed(AppRoutes.leaveScreen),
-          ),
-        ),
+        // Card(
+        //   child: ListTile(
+        //     title: const Text("Attendence"),
+        //     onTap: () => NavigatorService.popAndPushNamed(AppRoutes.attendence),
+        //   ),
+        // ),
+        // Card(
+        //   child: ListTile(
+        //     title: const Text("Leave"),
+        //     onTap: () =>
+        //         NavigatorService.popAndPushNamed(AppRoutes.leaveScreen),
+        //   ),
+        // ),
         Card(
           child: ListTile(
             onTap: () {
